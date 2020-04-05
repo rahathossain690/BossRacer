@@ -16,8 +16,9 @@ import pyautogui as pg
 try: input = raw_input
 except NameError: pass
 
-DELAY_TO_START = 1.5
-INTERVAL_OF_TYPING = 0.1
+DELAY_TO_START = 1
+INTERVAL_OF_TYPING = 0.119
+SPEED = 98.0
 
 def getImageName():
 	return newest(os.getcwd())
@@ -33,15 +34,14 @@ def newest(path):
     return max(paths, key=os.path.getctime)
 
 def firstPart():
-	try:
+	 try:
 		name = getImageName()
-		print(name)
 		with Image.open(name) as img:
 			text = tess.image_to_string(img)
 			text = refineText(text)
 			secondPart(text)
-	except:
-		print("Halted")
+	 except:
+	 	print("Halted")
 
 def refineText(text):
 	old = text
@@ -50,16 +50,17 @@ def refineText(text):
 	for line in old:
 		text += line
 		text += " "
- 	if text[0] == '|' and text[1] == ' ':
- 		text = text[1:]
+	if text[0] == "(" or text[0] == '/' or text[0] == '\\' or text[0] == '[':
+		text = text[1:]
  	text = text.replace("|", "I")
  	return text
-
 
 def secondPart(text):
 	print("PLACE OVER THE TEXTING AREA WITHIN {0} SECONDS".format(DELAY_TO_START))
 	time.sleep(DELAY_TO_START)
+	spd = INTERVAL_OF_TYPING
 	pg.click()
-	pg.typewrite(text, interval = INTERVAL_OF_TYPING)
+	pg.typewrite(text, interval = spd)
 
-firstPart()
+if __name__ == "__main__":
+	firstPart()
