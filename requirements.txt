@@ -9,7 +9,6 @@ public==2019.4.13
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
 PyAutoGUI==0.9.50
-pycrypto==2.6.1
 PyGetWindow==0.0.8
 PyMsgBox==1.0.7
 pyperclip==1.8.0
