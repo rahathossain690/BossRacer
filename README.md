@@ -14,5 +14,5 @@ pip install -r requirements.text
 ```
 python BossRacer.py
 ```
-4. Within 1.5 seconds place the mouse cursor on the textbox where you were to type the given text.
+4. Within 1 seconds place the mouse cursor on the textbox where you were to type the given text.
 5. Nothing to do after that. Thanks.
