@@ -1,6 +1,9 @@
 # BossRacer
 Simple python based typeracer bot.
 
+# Video Demonstration
+Youtube: https://www.youtube.com/watch?v=8ra32NdE1xw
+
 # Requirements
 Install requirements via command
 ```
